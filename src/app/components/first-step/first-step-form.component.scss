@@ -1,0 +1,19 @@
+small {
+    font-size: 1rem;
+}
+
+input.ng-invalid.ng-touched {
+    border: red 1px solid;
+}
+
+.error {
+    border: red 1px solid;
+}
+
+p {
+    color: var(--cool-gray);
+}
+
+.text-section-one {
+    margin-block-start: 1.5em
+}

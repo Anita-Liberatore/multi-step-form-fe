@@ -1,0 +1,12 @@
+
+.form-root{
+    display: flex;
+    flex-direction: row;
+    max-width: calc(960px - 2em);
+    width: 100%;
+    margin: auto auto;
+    background-color: white;
+    border-radius: 10px;
+    padding: 1em;
+    box-shadow: var(--light-gray) 0px 18px 50px -10px;
+}

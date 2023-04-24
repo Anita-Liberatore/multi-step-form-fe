@@ -1,0 +1,14 @@
+<div class="stepper-section">
+    <div class="stepper-container" >
+        <div class="stepper-link" *ngFor = 'let step of stepperData'>
+            <div class="stepper-number"  [ngClass]="{'active-step' : step.numberStepper == currentStepperProgress}">
+                {{step.numberStepper}}
+            </div>
+    
+            <div class="stepper-description">
+                <p class="stepper-title">{{step.stepperTitle}}</p>
+                <P class="stepper-info">{{step.stepperInfo}}</P>
+            </div>
+        </div>
+    </div>
+</div>

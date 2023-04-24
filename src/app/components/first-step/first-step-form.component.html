@@ -1,0 +1,46 @@
+<div class="first-step-part-one">
+
+    <form class="first-step-form" [formGroup]="personalInfoForm" (ngSubmit)="onSubmit()">
+        <div>
+            <h1 class="text-section-one">Personal info</h1>
+            <p class="step-description">Please, provide your name, email adress, and
+                phone number.</p>
+        </div>
+
+        <div class="form-group">
+            <div class="label-container">
+                <label for="name">Name</label>
+                <small class="text-error" *ngIf="submitted && personalInfoForm.get('name')!.hasError('required')">
+                    This field is required
+                </small>
+            </div>
+        </div>
+        <input [ngClass]="{'error': !personalInfoForm.controls.name.valid && submitted}" placeholder="e.g. Stephen King" type="text" formControlName="name">
+
+
+        <div class="form-group">
+            <div class="label-container">
+                <label for="name">Email address</label>
+                <small class="text-error" *ngIf="submitted && personalInfoForm.get('email')!.hasError('required')">
+                    This field is required
+                </small>
+            </div>
+            <input [ngClass]="{'error': !personalInfoForm.controls.email.valid && submitted}" email placeholder="e.g. stephenking@lorem.com" type="email" formControlName="email">
+        </div>
+
+        <div class="form-group">
+            <div class="label-container">
+                <label for="name">Phone number</label>
+                <small class="text-error" *ngIf="submitted && personalInfoForm.get('phone')!.hasError('required')">
+                    This field is required
+                </small>
+            </div>
+            <input [ngClass]="{'error': !personalInfoForm.controls.phone.valid && submitted}" placeholder="e.g. +1 234 567 890" type="number" formControlName="phone">
+        </div>
+
+
+        <div class="submit-container-button">
+            <button type="submit" class="submit-button">Next Step</button>
+        </div>
+    </form>
+</div>
