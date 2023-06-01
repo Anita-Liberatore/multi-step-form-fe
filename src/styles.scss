@@ -154,6 +154,7 @@ app-first-step-form {
 
 
 //STEPPER CSS - START
+
 .stepper-link{
     display: flex;
     flex-direction: row;
@@ -193,7 +194,7 @@ app-first-step-form {
 .stepper-section{
     background-image: url(./assets/images/bg-sidebar-desktop.svg);
     padding-top: 3em;
-    height: calc(568px - 3em);
+    height: 99%;
     width: 274px;
 }
 
@@ -206,7 +207,7 @@ app-first-step-form {
     margin: 0 auto;
 }
 
-app-second-step{
+app-second-step-form{
     display: flex;
     width: 100%;
 }

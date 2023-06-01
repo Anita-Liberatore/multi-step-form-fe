@@ -23,5 +23,9 @@ export class FirstStepFormComponent {
     this.submitted = true;
     this.onFormGroupChange.emit(this.personalInfoForm);
     this.onStepperChange.emit();
+
+    if(this.personalInfoForm.invalid) {
+      this.personalInfoForm.markAllAsTouched();
+    }
   }
 }

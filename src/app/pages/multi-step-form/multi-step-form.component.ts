@@ -10,11 +10,14 @@ export class MultiStepFormComponent {
   
   stepperNumber = 1;
 
-  firstStepFormChangeEvent(event: FormGroup) {
-
+  formChangeEvent(event: FormGroup) {
+    if(!event.invalid) {
+      this.stepperNumber++;
+    } 
   }
 
-  stepperChangeEvent(event: number) {
-    event = this.stepperNumber++;
+  goBack(event: number) {
+    this.stepperNumber = --event;
+    console.log(this.stepperNumber)
   }
 }

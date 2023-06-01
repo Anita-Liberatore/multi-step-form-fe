@@ -4,11 +4,11 @@
 
     </app-progress-stepper>
 
-    <app-first-step-form *ngIf="stepperNumber == 1" (onFormGroupChange)="firstStepFormChangeEvent($event)" (onStepperChange)="stepperChangeEvent($event)">
+    <app-first-step-form *ngIf="stepperNumber == 1" (onFormGroupChange)="formChangeEvent($event)">
 
     </app-first-step-form>
 
-    <app-second-step-form *ngIf="stepperNumber == 2">
+    <app-second-step-form *ngIf="stepperNumber == 2" (onBack)="goBack(stepperNumber)">
 
     </app-second-step-form>
 

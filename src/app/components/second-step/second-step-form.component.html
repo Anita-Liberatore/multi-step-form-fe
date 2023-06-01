@@ -1,3 +1,48 @@
-<div>
- CIAO
+<div class="second-step">
+    <form class="second-step-form" [formGroup]="planInfoForm" (ngSubmit)="onSubmit()">
+        <h1 style="margin-block-start: 1.5em">Select your plan</h1>
+
+        <p class="step-description" style="color: var(--cool-gray);">You have the option of monthly or yearly biling.
+        </p>
+
+        <div class="text-error" *ngIf="flagErrorPlainInfoForm">Please, select a plan</div>
+        <div class="plan-list">
+
+            <div class="plan" *ngFor="let plan of plans" (click)="selectPlanType(plan)" formControlName="planType"  ngDefaultControl
+                [ngClass]="{'selected' : planSelected == plan}">
+
+                <img src="{{plan.icon}}" class="plan-icon">
+
+
+                <div class="plan-description">
+
+                    <h4 style="margin: 0;">{{plan.name}}</h4>
+                    <p style="color: var(--cool-gray); margin: 0;">${{yearlyPlanSelected ? plan.yearlyPrice+"/yr" :
+                        plan.monthlyPrice+"/mo" }}</p>
+                    <p style=" font-size: 12px; margin: 0;">{{yearlyPlanSelected ? plan.yearlyOffer : ""}}</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="plan-switch">
+
+
+            <p class="select-plan-span" [ngClass]="{'selected-plan-span' : yearlyPlanSelected === false}">Monthly</p>
+
+            <label class="switch">
+                <input type="checkbox" (click)="displayYearlyPlanType()">
+                <span class="slider round"></span>
+            </label>
+
+            <p class="select-plan-span" [ngClass]="{'selected-plan-span' : yearlyPlanSelected === true}">Yearly</p>
+
+        </div>
+
+        <div class="submit-container-button">
+            <button class="go-back-button" (click)="goBack()">Go Back</button>
+            <button type="submit" class="submit-button">Next Step</button>
+        </div>
+    </form>
 </div>
