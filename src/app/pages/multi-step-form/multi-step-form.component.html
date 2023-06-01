@@ -8,8 +8,14 @@
 
     </app-first-step-form>
 
-    <app-second-step-form *ngIf="stepperNumber == 2" (onBack)="goBack(stepperNumber)">
+    <app-second-step-form *ngIf="stepperNumber == 2" (onFormGroupChange)="formChangeEvent($event)" (onBack)="goBack(stepperNumber)">
 
     </app-second-step-form>
+
+    <app-third-step-form *ngIf="stepperNumber == 3" (onBack)="goBack(stepperNumber)">
+
+    </app-third-step-form>
+
+
 
 </div>

@@ -8,6 +8,7 @@ import { ProgressStepperComponent } from './components/progress-stepper/progress
 import { FirstStepFormComponent } from './components/first-step/first-step-form.component';
 import { SecondStepFormComponent } from './components/second-step/second-step-form.component';
 import { MultiStepFormComponent } from './pages/multi-step-form/multi-step-form.component';
+import { ThirdStepFormComponent } from './components/third-step/third-step-form.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { MultiStepFormComponent } from './pages/multi-step-form/multi-step-form.
     ProgressStepperComponent,
     FirstStepFormComponent,
     SecondStepFormComponent,
+    ThirdStepFormComponent,
     MultiStepFormComponent
   ],
   imports: [

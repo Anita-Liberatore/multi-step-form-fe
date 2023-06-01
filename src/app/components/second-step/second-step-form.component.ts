@@ -9,6 +9,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export class SecondStepFormComponent implements OnInit {
 
   @Output() private onBack = new EventEmitter<number>();
+  @Output() private onStepperChange = new EventEmitter<number>();
+  @Output() private onFormGroupChange = new EventEmitter<any>();
 
   plans = [
     {
@@ -50,10 +52,23 @@ export class SecondStepFormComponent implements OnInit {
 
   selectPlanType(plan: any) {
     this.flagErrorPlainInfoForm = this.planInfoForm.invalid ? false : true;
-    this.planSelected = plan;
+    if(plan) {
+      this.planSelected = plan;
+
+      this.planInfoForm.patchValue({
+        planType: this.planSelected,
+      });
+      
+      console.log(this.planInfoForm)
+    }
+    
+
   }
 
-  onSubmit() {
+  onSubmit() {    
+    this.onFormGroupChange.emit(this.planInfoForm)
+    this.onStepperChange.emit();
+
     this.planInfoForm.patchValue({
       planType: this.planSelected,
     });

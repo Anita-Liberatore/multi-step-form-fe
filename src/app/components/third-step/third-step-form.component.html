@@ -1,0 +1,27 @@
+<div class="third-step">
+
+    <h1 style="margin-block-start: 1.5em">Pick Add-Ons</h1>
+    
+    <p class="step-description"  style="color: var(--cool-gray);">Add-ons help enhance your gaming experience.</p> 
+
+    <div class="addon-container">
+        <div class="add-on" *ngFor="let item of addons; let i = index" (click)="this.toggleAddon(i)" [ngClass]="{'addon-selected': item.selected === true}">
+            <div class="add-on-content">
+                <input type="checkbox" [checked]="item.selected">
+                <div class="add-on-description" >
+                    <h4 class="add-on-title">{{item.name}}</h4>
+                    <p class="add-on-text">{{item.description}}</p>
+                </div>
+                <div class="add-on-price">+${{item.monthlyPrice}}/mo</div>
+                
+                <div class="add-on-price">+${{item.yearlyPrice}}/yr</div>
+            </div>
+        </div>
+    </div>
+   
+
+    <div class="button-submit-container" >
+        <button class="go-back-button" (click)="goBack()">Go Back</button>
+        <button class="submit-button">Next Step</button>
+    </div>  
+</div>

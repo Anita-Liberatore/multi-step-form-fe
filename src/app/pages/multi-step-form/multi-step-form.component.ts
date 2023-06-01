@@ -15,7 +15,7 @@ export class MultiStepFormComponent {
       this.stepperNumber++;
     } 
   }
-
+  
   goBack(event: number) {
     this.stepperNumber = --event;
     console.log(this.stepperNumber)
